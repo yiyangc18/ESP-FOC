@@ -1,0 +1,29 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.adapterTargetName": "esp32s3",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-bridge.cfg"
+  ],
+  "idf.flashType": "JTAG",
+  "idf.portWin": "COM5",
+  "files.associations": {
+    "timer.h": "c",
+    "mcpwm.h": "c",
+    "motor_pwm.h": "c",
+    "encoder.h": "c",
+    "foc_config.h": "c",
+    "filter.h": "c",
+    "foc.h": "c",
+    "esp_timer.h": "c",
+    "main.h": "c",
+    "task.h": "c",
+    "freertos.h": "c",
+    "timers.h": "c",
+    "gptimer.h": "c",
+    "timer_loop.h": "c",
+    "sensor.h": "c",
+    "esp_log.h": "c",
+    "math.h": "c",
+    "pid.h": "c"
+  }
+}
