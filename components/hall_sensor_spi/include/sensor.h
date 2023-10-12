@@ -1,5 +1,19 @@
+/**
+ * @file    sensor.h 
+ * @brief   传感器驱动头文件
+ * @author   Chery
+ * @date     October 2023
+ */
+
 #ifndef ESPFOC_HALLSENSOR_H_
 #define ESPFOC_HALLSENSOR_H_
+
+#include <stdio.h>
+#include <string.h>
+#include "driver/spi_master.h"
+#include "esp_log.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 
 #define MT6701_MISO 1

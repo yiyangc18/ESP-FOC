@@ -24,6 +24,7 @@
     "sensor.h": "c",
     "esp_log.h": "c",
     "math.h": "c",
-    "pid.h": "c"
+    "pid.h": "c",
+    "stdio.h": "c"
   }
 }

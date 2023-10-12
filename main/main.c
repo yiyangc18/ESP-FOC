@@ -1,12 +1,33 @@
-/*
- * SPDX-FileCopyrightText: 2010-2022 Espressif Systems (Shanghai) CO LTD
- *
- * SPDX-License-Identifier: CC0-1.0
- */
 
 #include "main.h"
 
 static const char *TAG = "main";
+
+void app_main(void)
+{
+  print_hello_Wrold();
+
+  foc_init();
+
+  //speed test
+  pid_control_mode_flag = SPEED_LOOP_CONTROL;
+  speed_pid_handler.expect = PI;
+
+  //angle test
+  // pid_control_mode_flag = ANGLE_LOOP_CONTROL;
+  // while(1)
+  // {
+  //   angle_pid_handler.expect += 0.1;
+  //   angle_pid_handler.expect = _normalizeAngle(angle_pid_handler.expect);
+  //   vTaskDelay(100 / portTICK_PERIOD_MS);
+  // }
+
+  // hall_sensor_init();
+  // xTaskCreate(readSensorTask, "readSensorTask", 2048, NULL, 5, NULL);
+
+  // xTaskCreate(motorPwmDriverTask, "motorPwmDriverTask", 2048, NULL, 6, NULL);
+
+}
 
 
 void foc_init(void)
@@ -57,23 +78,6 @@ void foc_init(void)
 
 }
 
-
-
-void app_main(void)
-{
-  print_hello_Wrold();
-
-  foc_init();
-
-  speed_pid_handler.expect = 3;
-  // FOC_Struct.current_q = -1.0f;
-
-  // hall_sensor_init();
-  // xTaskCreate(readSensorTask, "readSensorTask", 2048, NULL, 5, NULL);
-
-  // xTaskCreate(motorPwmDriverTask, "motorPwmDriverTask", 2048, NULL, 6, NULL);
-
-}
 
 
 void print_hello_Wrold(void)

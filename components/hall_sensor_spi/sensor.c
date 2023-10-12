@@ -1,11 +1,5 @@
 
-#include <stdio.h>
-#include <string.h>
 #include "sensor.h"
-#include "driver/spi_master.h"
-#include "esp_log.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 
 spi_device_handle_t spi;
 

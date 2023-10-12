@@ -17,6 +17,7 @@
 
 #include "foc.h"
 
+void foc_init(void);
 
 void print_hello_Wrold(void);
 

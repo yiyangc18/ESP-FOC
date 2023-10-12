@@ -1,7 +1,5 @@
-#include <stdio.h>
+
 #include "timer_loop.h"
-#include "esp_log.h"
-#include "esp_timer.h"
 
 static esp_timer_handle_t timer_handle[6];
 

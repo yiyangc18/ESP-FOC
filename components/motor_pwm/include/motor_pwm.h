@@ -1,5 +1,18 @@
+/**
+ * @file    motor_pwm.h
+ * @brief   电机pwm输出驱动头文件
+ * @author   Chery
+ * @date     October 2023
+ */
+
 #ifndef MOTOR_PWM_H
 #define MOTOR_PWM_H
+
+#include <stdio.h>
+#include "driver/mcpwm.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_log.h"
 
 #define MO1_PIN 17
 #define MO2_PIN 16
