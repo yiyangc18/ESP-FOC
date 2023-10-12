@@ -1,9 +1,10 @@
 /**************************************************************************//**
   \file     pid.c
-  \brief    PID algorithm implementation source code
-  \author   Lao·Zhu
+  \brief    this is the header file of pid.c, which defines the structure
+            of PID algorithm and closed-loop state macro.
+  \author   Lao·Zhu & Chery
   \version  V1.0.2
-  \date     29. October 2021
+  \date     October 2023
  ******************************************************************************/
 
 #include "pid.h"

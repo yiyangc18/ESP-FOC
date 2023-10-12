@@ -1,10 +1,9 @@
 /**************************************************************************//**
   \file     encoder.c
-  \brief    this file contains the code implementation of angle acquisition
-            and initialization functions of sc60228 and sc60224.
-  \author   Lao·Zhu
-  \version  V1.0.2
-  \date     29. October 2021
+  \brief    this file contains the code implementation of encoder, including
+            zeroing, angle calculation, speed calculation.
+  \author   Lao·Zhu, Modified by Chery
+  \date     October 2023
  ******************************************************************************/
 
 #include "encoder.h"
@@ -25,16 +24,6 @@ volatile static float mechanical_angle_last = 0.0;
     \brief the mechanical angle of the motor rotor 
 */
 volatile static float machine_angle_now = 0.0;
-
-/*!
-    \brief delay function for magnetic encoder
-*/
-void encoder_delay(void) {
-    /* use loop functions to delay time */
-    unsigned char delay_counter = 0xff;
-    while (delay_counter)
-        delay_counter--;
-}
 
 /*!
     \brief  read mechanical angle directly from encoder
@@ -62,6 +51,7 @@ float encoder_get_electronic_angle(void) {
     // electric_angle = fmodf(electric_angle, TWO_PI);  // 对 2π 取模，得到 0~2π 的电角度
     return electric_angle;
 }
+
 
 // #define FILTER_DATA_NUM 100
 

@@ -1,13 +1,12 @@
 /**************************************************************************//**
   \file     fast_math.c
-  \brief    this file contains the code implementation of sine function
-            value lookup table and fast calculation of sine value.
-  \author   Lao·Zhu
-  \version  V1.0.1
-  \date     10. October 2021
+  \brief    fast math functions, including sine, cosine, _normalizeAngle
+  \author   Lao·Zhu & Chery
+  \date     October 2023
  ******************************************************************************/
 
 #include "fast_math.h"
+#include <math.h>
 
 /*!
     \brief fast sine function lookup table
@@ -81,4 +80,32 @@ float fast_sin(float theta) {
     }
     /* look up the table to obtain the sine value */
     return sin_tab[(int) (81.4873308f * theta)];
+}
+
+/*!
+    \brief     convert floating point numbers to int32 type data
+    \param[in] data0: floating point type data to be converted
+    \retval    converted int32 type data
+*/
+unsigned int float_to_int32(float data0) {
+    unsigned int uintp32 = (*((unsigned int *) (&data0)));
+    return uintp32;
+}
+
+/*!
+    \brief     convert int32 to floating point numbers type data
+    \param[in] data0: int32 type data to be converted
+    \retval    converted floating point type data
+*/
+float int32_to_float(unsigned int data0) {
+    float fp32 = (*((float *) (&data0)));
+    return fp32;
+}
+
+
+#define _2PI 6.28318530718f
+// normalizing radian angle to [0,2PI]
+float _normalizeAngle(float angle){
+  float a = fmodf(angle, _2PI);
+  return a >= 0 ? a : (a + _2PI);
 }

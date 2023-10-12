@@ -1,6 +1,6 @@
 /**************************************************************************//**
-  \file     config.h
-  \brief    used to link the hardware
+  \file     esp_hw_link.h
+  \brief    this file contains the code implementation of hardware link.
   \author   Chery
   \date     October 2023
  ******************************************************************************/
@@ -15,26 +15,6 @@ int micros(void)
 void delayms(uint32_t ms) {
     TickType_t xDelay = pdMS_TO_TICKS(ms);
     vTaskDelay(xDelay);
-}
-
-/*!
-    \brief     convert floating point numbers to int32 type data
-    \param[in] data0: floating point type data to be converted
-    \retval    converted int32 type data
-*/
-unsigned int float_to_int32(float data0) {
-    unsigned int uintp32 = (*((unsigned int *) (&data0)));
-    return uintp32;
-}
-
-/*!
-    \brief     convert int32 to floating point numbers type data
-    \param[in] data0: int32 type data to be converted
-    \retval    converted floating point type data
-*/
-float int32_to_float(unsigned int data0) {
-    float fp32 = (*((float *) (&data0)));
-    return fp32;
 }
 
 volatile unsigned char phase_sequence = 0;
@@ -58,9 +38,4 @@ float getSensorAngle(void){
     return hall_sensor_read_angle_in_radians();
 }
 
-#define _2PI 6.28318530718f
-// normalizing radian angle to [0,2PI]
-float _normalizeAngle(float angle){
-  float a = fmodf(angle, _2PI);
-  return a >= 0 ? a : (a + _2PI);
-}
+

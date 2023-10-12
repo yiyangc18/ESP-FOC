@@ -1,13 +1,13 @@
 /**************************************************************************//**
   \file     encoder.h
-  \brief    this is the header file of encoder.c.
+  \brief    this file contains the code implementation of encoder, including
+            zeroing, angle calculation, speed calculation.
   \author   Lao·Zhu, Modified by Chery
   \date     October 2023
-  \note     Use function pointers, specific encoder support is implemented externally.
  ******************************************************************************/
 
-#ifndef MINIFOC_ALGORITHM_ENCODER_H_
-#define MINIFOC_ALGORITHM_ENCODER_H_
+#ifndef ESPFOC_COMP_ENCODER_H_
+#define ESPFOC_COMP_ENCODER_H_
 
 #include "foc.h"
 #include "foc_config.h"
@@ -19,4 +19,4 @@ float encoder_get_mechanical_angle(void);
 float encoder_get_electronic_angle(void);
 void encoder_update_speed(void);
 
-#endif //MINIFOC_ALGORITHM_ENCODER_H_
+#endif //ESPFOC_COMP_ENCODER_H_

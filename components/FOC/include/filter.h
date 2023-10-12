@@ -1,19 +1,22 @@
 /**************************************************************************//**
   \file     filter.c
-  \brief    控制器的低通滤波器传递函数为:
-            \[G_f = \frac{1}{1+sT_f}\]
-            离散化为:
-            \[v_f(k)=\frac{T_f}{T_f+T_s}v_f(k-1)+\frac{T_S}{T_f+T_s}v(k)\]
-            其中vf(k)为k时刻的滤波值， v(k)为k时刻的速度测量值， 
-            Tf是滤波时间常数，Ts是采样时间（或上述式子的时间间隔）。 
-            这个低通滤波器也可以写成这样的形式: \(v_f(k)=\alpha v_f(k-1)+(1-\alpha)v(k)\) 
-            其中：\[\alpha=\frac{T_f}{T_f+T_s}\]
+  \brief    this file contains the code implementation of low pass filter.
   \author   Chery
   \date     October 2023
  ******************************************************************************/
 
-#ifndef ESPFOC_ALGORITHM_FILTER_H_
-#define ESPFOC_ALGORITHM_FILTER_H_
+/*
+  控制器的低通滤波器传递函数为:
+  \[G_f = \frac{1}{1+sT_f}\]
+  离散化为:
+  \[v_f(k)=\frac{T_f}{T_f+T_s}v_f(k-1)+\frac{T_S}{T_f+T_s}v(k)\]
+  其中vf(k)为k时刻的滤波值， v(k)为k时刻的速度测量值， 
+  Tf是滤波时间常数，Ts是采样时间（或上述式子的时间间隔）。 
+  这个低通滤波器也可以写成这样的形式: \(v_f(k)=\alpha v_f(k-1)+(1-\alpha)v(k)\) 
+  其中：\[\alpha=\frac{T_f}{T_f+T_s}\]
+*/
+#ifndef ESPFOC_COMP_FILTER_H_
+#define ESPFOC_COMP_FILTER_H_
 
 typedef struct {
     float time_constant;
@@ -40,4 +43,4 @@ void init_lpf(Filter_Structure_t* lpf, float time_constant);
  */
 float filter_update_value(Filter_Structure_t* lpf, float x);
 
-#endif //ESPFOC_ALGORITHM_FILTER_H_
+#endif //ESPFOC_COMP_FILTER_H_

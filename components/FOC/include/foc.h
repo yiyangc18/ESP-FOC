@@ -1,14 +1,12 @@
 /**************************************************************************//**
   \file     foc.h
-  \brief    this is the header file of foc.c, which defines the structure
-            of FOC algorithm and angle conversion factor.
-  \author   Lao·Zhu
-  \version  V1.0.1
-  \date     9. October 2021
+  \brief    this file contains the code implementation of FOC algorithm.
+  \author   Chery
+  \date     October 2023
  ******************************************************************************/
 
-#ifndef MINIFOC_ALGORITHM_FOC_H_
-#define MINIFOC_ALGORITHM_FOC_H_
+#ifndef ESPFOC_COMP_FOC_H_
+#define ESPFOC_COMP_FOC_H_
 
 #include "pid.h"
 #include "encoder.h"
@@ -37,4 +35,4 @@ void foc_loop(void);
 
 void controller_loop(void);
 
-#endif //MINIFOC_ALGORITHM_FOC_H_
+#endif //ESPFOC_COMP_FOC_H_

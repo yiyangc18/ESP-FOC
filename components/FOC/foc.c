@@ -1,10 +1,8 @@
 /**************************************************************************//**
   \file     foc.c
-  \brief    this document is mainly the code implementation of motor
-            phase sequence correction and FOC algorithm.
-  \author   Lao·Zhu
-  \version  V1.0.3
-  \date     1. August 2023
+  \brief    this file contains the code implementation of FOC algorithm.
+  \author   Chery
+  \date     October 2023
  ******************************************************************************/
 
 #include "foc.h"
@@ -252,7 +250,7 @@ void controller_loop(void){
         /* calculate the speed loop PID and obtain the calculated value */
         FOC_Struct.current_q = pid_calculate_result((PID_Structure_t *) &speed_pid_handler, FOC_Struct.rotate_speed);
 
-        log_report(TAG, "controller_loop: expect = %f, ratate_speed = %f, current_q = %f", speed_pid_handler.expect, FOC_Struct.rotate_speed,FOC_Struct.current_q);
+        // log_report(TAG, "controller_loop: expect = %f, ratate_speed = %f, current_q = %f", speed_pid_handler.expect, FOC_Struct.rotate_speed,FOC_Struct.current_q);
     }
 
 }

@@ -1,14 +1,12 @@
 /**************************************************************************//**
-  \file     fast_math.h
-  \brief    this is the header file of fast_math.c, the macros of fast amplitude
-            limiting algorithm and cosine function evaluation algorithm are defined.
-  \author   Lao·Zhu
-  \version  V1.0.1
-  \date     10. October 2021
+  \file     fast_math.c
+  \brief    fast math functions, including sine, cosine, _normalizeAngle
+  \author   Lao·Zhu & Chery
+  \date     October 2023
  ******************************************************************************/
 
-#ifndef MINIFOC_ALGORITHM_FAST_MATH_H_
-#define MINIFOC_ALGORITHM_FAST_MATH_H_
+#ifndef ESPFOC_COMP_FAST_MATH_H_
+#define ESPFOC_COMP_FAST_MATH_H_
 
 /*!
     \brief     fast clipping algorithm
@@ -28,4 +26,21 @@
 
 float fast_sin(float theta);
 
-#endif //MINIFOC_ALGORITHM_FAST_MATH_H_
+float _normalizeAngle(float angle);
+
+/*!
+    \brief     convert floating point numbers to int32 type data
+    \param[in] data0: floating point type data to be converted
+    \retval    converted int32 type data
+*/
+unsigned int float_to_int32(float data0) ;
+
+/*!
+    \brief     convert int32 to floating point numbers type data
+    \param[in] data0: int32 type data to be converted
+    \retval    converted floating point type data
+*/
+float int32_to_float(unsigned int data0) ;
+
+
+#endif //ESPFOC_COMP_FAST_MATH_H_

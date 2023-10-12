@@ -2,13 +2,13 @@
   \file     pid.h
   \brief    this is the header file of pid.c, which defines the structure
             of PID algorithm and closed-loop state macro.
-  \author   Lao·Zhu
-  \version  V1.0.1
-  \date     9. October 2021
+  \author   Lao·Zhu & Chery
+  \version  V1.0.2
+  \date     October 2023
  ******************************************************************************/
 
-#ifndef MINIFOC_ALGORITHM_PID_H_
-#define MINIFOC_ALGORITHM_PID_H_
+#ifndef ESPFOC_COMP_PID_H_
+#define ESPFOC_COMP_PID_H_
 
 /*! \brief torque loop control mode */
 #define TORQUE_LOOP_CONTROL     1
@@ -56,4 +56,4 @@ extern volatile PID_Structure_t angle_pid_handler;
 void pid_config(unsigned char mode);
 float pid_calculate_result(PID_Structure_t *pid_handler, float collect);
 
-#endif //MINIFOC_ALGORITHM_PID_H_
+#endif //ESPFOC_COMP_PID_H_
